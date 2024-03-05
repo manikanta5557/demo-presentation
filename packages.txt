@@ -1,2 +1,1 @@
-tensorflow
 pip install tensorflow
