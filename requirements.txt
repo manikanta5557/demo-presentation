@@ -3,6 +3,5 @@ keras
 opencv-python
 matplotlib
 tensorflow_hub
-PIL
 pytesseract
 pathlib
