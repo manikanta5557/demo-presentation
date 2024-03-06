@@ -50,24 +50,24 @@ def get_text(image_path):
   return cleaned_text
 
 embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
-# sentence_encoder_layer = hub.KerasLayer("https://tfhub.dev/google/universal-sentence-encoder/4",
-#                                         input_shape=[], # shape of inputs coming to our model
-#                                         dtype=tf.string, # data type of inputs coming to the USE layer
-#                                         trainable=False, # keep the pretrained weights (we'll create a feature extractor)
-#                                         name="USE")
-# model= tf.keras.Sequential([
-#   sentence_encoder_layer, # take in sentences and then encode them into an embedding
-#   layers.Dense(128, activation="relu"),
-#   layers.Dropout(0.1),
-#   layers.Dense(64,activation="relu"),
-#   layers.Dense(3, activation="softmax")
-# ], name="model_6_USE")
+sentence_encoder_layer = hub.KerasLayer("https://tfhub.dev/google/universal-sentence-encoder/4",
+                                        input_shape=[], # shape of inputs coming to our model
+                                        dtype=tf.string, # data type of inputs coming to the USE layer
+                                        trainable=False, # keep the pretrained weights (we'll create a feature extractor)
+                                        name="USE")
+model= tf.keras.Sequential([
+  sentence_encoder_layer, # take in sentences and then encode them into an embedding
+  layers.Dense(128, activation="relu"),
+  layers.Dropout(0.1),
+  layers.Dense(64,activation="relu"),
+  layers.Dense(3, activation="softmax")
+], name="model_6_USE")
 
-# # Compile model
-# # model.compile(loss="sparse_categorical_crossentropy",
-#                 optimizer=tf.keras.optimizers.Adam(),
-#                 metrics=["accuracy"])
-# model.load_weights('use_model.h5')
+# Compile model
+# model.compile(loss="sparse_categorical_crossentropy",
+                optimizer=tf.keras.optimizers.Adam(),
+                metrics=["accuracy"])
+model.load_weights('use_model.h5')
 print('loaded')
 st.write(""" # My first app Hello *world!*""")
 uploaded_file = st.file_uploader("Upload Your File Here!")
