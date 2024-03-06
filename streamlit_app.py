@@ -1,3 +1,10 @@
+import requests
+headers = {'user-agent': 'Wget/1.16 (linux-gnu)'}  # <-- the key is here!
+r = requests.get("https://www.dropbox.com/scl/fi/r30jjkq33qftgglpcehvb/use_model.h5?rlkey=7nm0qqtno4hkvidjt03jb8cgs&dl=0", stream=True, headers=headers)
+with open("use_model.h5", 'wb') as f:
+    for chunk in r.iter_content(chunk_size=1024):
+        if chunk:
+            f.write(chunk)
 import streamlit as st
 import pandas as pd
 import tensorflow as tf
