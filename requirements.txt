@@ -5,3 +5,4 @@ matplotlib
 tensorflow_hub==0.16.0
 pytesseract
 pathlib
+opencv-python
