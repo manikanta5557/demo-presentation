@@ -1,7 +1,7 @@
-tensorflow
-keras
-opencv-python
+tensorflow==2.15.0
+keras==2.15.0
+seaborn
 matplotlib
-tensorflow_hub
+tensorflow_hub==0.16.0
 pytesseract
 pathlib
