@@ -1,8 +1,8 @@
 tensorflow==2.15.0
 keras==2.15.0
+tensorflow_hub==0.16.1
+pytesseract== 0.3.10
+opencv-python==4.9.0.80
 seaborn
 matplotlib
-tensorflow_hub==0.16.0
-pytesseract
 pathlib
-opencv-python
