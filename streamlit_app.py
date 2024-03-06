@@ -64,7 +64,7 @@ model= tf.keras.Sequential([
 ], name="model_6_USE")
 
 # Compile model
-# model.compile(loss="sparse_categorical_crossentropy",
+model.compile(loss="sparse_categorical_crossentropy",
                 optimizer=tf.keras.optimizers.Adam(),
                 metrics=["accuracy"])
 model.load_weights('use_model.h5')
